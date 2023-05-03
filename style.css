@@ -1,0 +1,50 @@
+html { 
+	background-color: #d7d6d6;
+}
+
+body {
+	color: #fff;
+    font: 95% "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+    margin: 0px; 
+}
+
+
+a { 
+	font-family: "Gill Sans", Arial, Verdana;
+	text-decoration: none; 
+	color: #7c9c98;
+}
+
+a:hover { 
+	text-decoration: underline;
+	color: #7dcdc4;
+}
+
+
+	div.wrapper { width: 100%; background-color: #e6e6e6;}
+
+
+header {
+	position: relative;
+	display: block;
+	heigh: 120px;
+ 	margin: 0 auto;
+	width: 800px;
+}
+ 
+header h1 {
+	background: transparent url(http://static.tumblr.com/v95kgmo/92ulk7lys/logotype.png) no-repeat;
+	position: relative;
+	display: block;
+	float: left;
+	width: 260px;
+	height: 120px;
+	text-indent: -9999px;
+	-webkit-transition: opacity .5s ease;
+	-o-transition: opacity .5s ease;
+	transition: opacity .5s ease;
+}
+
+header h1:hover {
+	opacity: .5;
+	}
