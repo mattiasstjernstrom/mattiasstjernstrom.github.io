@@ -1,5 +1,7 @@
 html { 
 	background-color: #000;
+	margin: auto;
+	width: 50%;
 }
 
 .card {
