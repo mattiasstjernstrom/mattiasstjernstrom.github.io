@@ -1,50 +1,93 @@
 html { 
-	background-color: #d7d6d6;
+	background-color: #000;
 }
 
-body {
-	color: #fff;
-    font: 95% "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
-    margin: 0px; 
+.card {
+  font-family: monospace;
+  margin-top: 40px;
+  width: 350px;
+  height: 260px;
+  background: #292828da;
+  border: 2px solid #000;
+  border-radius: 15px;
 }
 
-
-a { 
-	font-family: "Gill Sans", Arial, Verdana;
-	text-decoration: none; 
-	color: #7c9c98;
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
 }
 
-a:hover { 
-	text-decoration: underline;
-	color: #7dcdc4;
+.dots {
+  display: flex;
+  justify-content: last baseline;
 }
 
-
-	div.wrapper { width: 100%; background-color: #e6e6e6;}
-
-
-header {
-	position: relative;
-	display: block;
-	heigh: 120px;
- 	margin: 0 auto;
-	width: 800px;
-}
- 
-header h1 {
-	background: transparent url(http://static.tumblr.com/v95kgmo/92ulk7lys/logotype.png) no-repeat;
-	position: relative;
-	display: block;
-	float: left;
-	width: 260px;
-	height: 120px;
-	text-indent: -9999px;
-	-webkit-transition: opacity .5s ease;
-	-o-transition: opacity .5s ease;
-	transition: opacity .5s ease;
+.dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
 }
 
-header h1:hover {
-	opacity: .5;
-	}
+.dot-1 {
+  background-color: rgb(0, 132, 255);
+}
+
+.dot-2 {
+  background-color: rgb(230, 0, 255);
+}
+
+.dot-3 {
+  background-color: rgb(0, 255, 89);
+}
+
+.top p {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.dot , .top p {
+  margin: 5px;
+}
+
+.g-color {
+  color: darkgreen;
+}
+
+.bottom {
+  margin-top: 30px;
+  padding: 0 25px;
+}
+
+.code {
+  font-size: 15px;
+}
+
+.red {
+  color: rgb(210, 63, 52);
+}
+
+.violet {
+  color: rgb(181, 40, 203);
+}
+
+.blue {
+  color: rgb(91, 131, 223);
+}
+
+.orange {
+  color: rgb(195, 128, 3);
+}
+
+.white {
+  color: rgb(163, 163, 163);
+}
+
+.space-4 {
+  margin-left: 35px;
+}
+
+.space-4x2 {
+  margin-left: 70px;
+}
