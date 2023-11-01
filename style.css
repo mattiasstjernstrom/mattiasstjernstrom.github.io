@@ -1,0 +1,107 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #000;
+  font-family: "Noto Sans Mono", serif;
+}
+
+.terminal {
+  max-width: 400px;
+  background-color: #111;
+  border: 2px solid #333;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  margin: 10px;
+}
+
+.terminal-header {
+  display: flex;
+  align-items: center;
+  background-color: #222;
+  padding: 5px 10px;
+}
+
+.terminal-buttons {
+  display: flex;
+  gap: 5px;
+}
+
+.circle {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.red {
+  background-color: #ff5f56;
+}
+
+.yellow {
+  background-color: #ffbd2e;
+}
+
+.green {
+  background-color: #28c940;
+}
+
+.grey {
+  color: #44475a;
+}
+
+.bluegrey {
+  color: #6272a4;
+}
+
+.terminal-title {
+  font-family: Arial, sans-serif;
+  color: #fff;
+  margin-left: 10px;
+  padding-top: 3px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  width: 260px;
+}
+
+.terminal-content {
+  padding: 10px;
+  color: #fff;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.container a {
+  color: #ff79c6;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.column {
+  padding: 0;
+  border: 0;
+  text-align: left;
+}
+
+.blinking-text {
+  animation: blink-animation 1s steps(5, start) infinite;
+  -webkit-animation: blink-animation 1s steps(5, start) infinite;
+}
+
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
