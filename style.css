@@ -78,7 +78,7 @@ body {
   gap: 10px;
 }
 
-.container a {
+.container a, .container a:visited {
   color: #ff79c6;
   font-weight: bold;
   text-decoration: none;
