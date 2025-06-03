@@ -30,6 +30,7 @@
         color: #2a7ae2;
         letter-spacing: 1px;
         font-weight: 700;
+        margin: 0;
       }
       h2 {
         color: #2a7ae2;
@@ -129,6 +130,13 @@
         margin-right: 18px;
         font-size: 1.05em;
       }
+      .profile-image {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
       @media (max-width: 700px) {
         .container {
           padding: 18px 8vw 18px 8vw;
@@ -145,7 +153,24 @@
   </head>
   <body>
     <div class="container">
-      <h1>Mattias Stjernström</h1>
+      <div
+        style="
+          display: flex;
+          align-items: center;
+          gap: 28px;
+          margin-bottom: 18px;
+        "
+      >
+        <img
+          src="https://avatars.githubusercontent.com/u/126202425"
+          alt="Mattias Stjernström"
+          class="profile-image"
+        />
+        <div>
+          <h1>Mattias Stjernström</h1>
+          <small>Python Developer | AI Enthusiast | Web Developer</small>
+        </div>
+      </div>
       <div class="contact">
         <span
           >📧
