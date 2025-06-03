@@ -9,11 +9,20 @@
       rel="stylesheet"
     />
     <style>
+      html {
+        box-sizing: border-box;
+      }
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
       body {
         font-family: "Montserrat", Arial, sans-serif;
         margin: 0;
         background: linear-gradient(120deg, #e3eafc 0%, #f4f4f4 100%);
         color: #222;
+        min-height: 100vh;
       }
       .container {
         max-width: 900px;
@@ -65,6 +74,7 @@
         text-decoration: none;
         font-weight: 500;
         transition: color 0.2s;
+        word-break: break-all;
       }
       .contact a:hover {
         color: #174a8b;
@@ -95,12 +105,8 @@
         transition: transform 0.15s, box-shadow 0.15s;
         cursor: default;
         display: inline-block;
+        white-space: nowrap;
       }
-      /*
-      .skill:hover {
-        transform: translateY(-2px) scale(1.05);
-        box-shadow: 0 4px 16px rgba(42, 122, 226, 0.18);
-      } */
       .exp-job {
         margin-bottom: 18px;
       }
@@ -126,10 +132,15 @@
         margin-bottom: 2px;
         display: block;
       }
+      .languages-list {
+        padding-left: 0;
+        margin: 0;
+      }
       .languages-list li {
         display: inline-block;
         margin-right: 18px;
         font-size: 1.05em;
+        list-style: none;
       }
       .profile-image {
         width: 120px;
@@ -137,31 +148,80 @@
         border-radius: 50%;
         object-fit: cover;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        flex-shrink: 0;
+      }
+      .header-flex {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        margin-bottom: 18px;
+      }
+      @media (max-width: 900px) {
+        .container {
+          margin: 24px 8vw;
+          padding: 24px 4vw 18px 4vw;
+        }
       }
       @media (max-width: 700px) {
         .container {
-          padding: 18px 8vw 18px 8vw;
+          padding: 12px 2vw 12px 2vw;
         }
         h1 {
-          font-size: 2em;
+          font-size: 1.5em;
+        }
+        h2 {
+          font-size: 1.1em;
+          padding-left: 8px;
+        }
+        .header-flex {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 12px;
+        }
+        .profile-image {
+          width: 90px;
+          height: 90px;
         }
         .contact {
           flex-direction: column;
           gap: 8px;
+          font-size: 1em;
+        }
+        .skills-list {
+          gap: 8px 8px;
+        }
+        .skill {
+          padding: 6px 14px;
+          font-size: 0.95em;
+        }
+        .languages-list li {
+          margin-right: 10px;
+        }
+      }
+      @media (max-width: 480px) {
+        .container {
+          margin: 0;
+          border-radius: 0;
+          box-shadow: none;
+          padding: 8px 2vw 8px 2vw;
+        }
+        .profile-image {
+          width: 70px;
+          height: 70px;
+        }
+        .skills-list {
+          gap: 6px 4px;
+        }
+        .skill {
+          padding: 5px 10px;
+          font-size: 0.9em;
         }
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <div
-        style="
-          display: flex;
-          align-items: center;
-          gap: 28px;
-          margin-bottom: 18px;
-        "
-      >
+      <div class="header-flex">
         <img
           src="https://avatars.githubusercontent.com/u/126202425"
           alt="Mattias Stjernström"
@@ -173,28 +233,26 @@
         </div>
       </div>
       <div class="contact">
-        <span
-          >📧
-          <a href="mailto:mk.stjernstrom@gmail.com"
-            >mk.stjernstrom@gmail.com</a
-          ></span
-        >
+        <span>
+          📧
+          <a href="mailto:mk.stjernstrom@gmail.com">mk.stjernstrom@gmail.com</a>
+        </span>
         <span>📱 <em>+46 76 878 41 56</em></span>
         <span>📍 <em>Norberg, Västmanland, Sweden</em></span>
-        <span
-          >🐙
+        <span>
+          🐙
           <a href="https://github.com/mattiasstjernstrom" target="_blank"
             >GitHub</a
-          ></span
-        >
-        <span
-          >🔗
+          >
+        </span>
+        <span>
+          🔗
           <a
             href="https://www.linkedin.com/in/mattiasstjernstrom"
             target="_blank"
             >LinkedIn</a
-          ></span
-        >
+          >
+        </span>
         <span>🌐 <a href="https://mehow.se" target="_blank">mehow.se</a></span>
       </div>
 
@@ -206,7 +264,7 @@
           apply and further develop skills in Python, AI, and machine
           learning.<br /><br />
           <strong>Who am I?</strong><br />
-          I am an 36 years old man, living in Norberg with my wife and three
+          I am a 36-year-old man, living in Norberg with my wife and three
           children. Passionate about programming since childhood, starting with
           websites in 1997. Recently fascinated by AI, I enrolled in a
           specialized program and quickly got hooked. Today, I am both a web and
