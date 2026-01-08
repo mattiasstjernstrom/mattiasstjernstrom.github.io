@@ -3,11 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>mehow.se</title>
+    <title>mehow.se ~ terminal</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Noto+Sans+Mono:wght@400;600&display=swap"
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Noto+Sans+Mono"
     />
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -19,61 +21,31 @@
           <div class="circle yellow"></div>
           <div class="circle green"></div>
         </div>
-        <div class="terminal-title">🏠 @mehow – -zsh -40x8</div>
+        <div class="terminal-title">guest@mehow.se: ~</div>
       </div>
-      <div class="terminal-content">
-        <p>~ : ls ./mehow.se/</p>
-        <div class="container">
-          <div class="column"><span class="bluegrey">myLinks:</span></div>
-          <div class="column">
-            <a href="https://github.com/mattiasstjernstrom">GitHub</a>
-          </div>
-          <div class="column">
-            <a href="https://www.linkedin.com/in/mattias-stjernstrom/"
-              >Linkedin</a
-            >
-          </div>
-          <div class="column">
-            <a href="https://mehow.se/mattias-cv/">Mattias.CV</a>
-          </div>
-          <div class="column"><span class="grey">.end</span></div>
-          <div class="column">&nbsp;</div>
-          <div class="column">&nbsp;</div>
+      <div class="terminal-content" id="terminal-content">
+        <div class="output">
+          Welcome to <span class="keyword">mehow.se</span> terminal v2.0<br />
+          Type <span class="string">'help'</span> to see available commands.<br />
         </div>
-        <p>
-          ~ : <span id="message"></span
-          ><span class="blinking-text">&#x2592;</span>
-        </p>
-        <script src="script.js"></script>
-        <p></p>
+        
+        <div class="command-line">
+          <span class="prompt">
+            <span class="tilda">➜</span> <span class="directory">~</span>
+          </span>
+          <input type="text" id="cmd-input" autocomplete="off" spellcheck="false" autofocus />
+        </div>
       </div>
     </div>
-    <!-- Universal mehow.se-watermark for demo sites (white text) -->
-    <div
-      style="
-        position: fixed;
-        bottom: 0px;
-        width: 175px;
-        text-align: center;
-        color: #fff;
-        line-height: 0px;
-        filter: drop-shadow(1px 0px 8px #842f8f);
-        font-family: Arial, Helvetica, sans-serif;
-        scale: 0.7;
-      "
-    >
-      made with 💖<a href="https://www.mehow.se/"
-        ><img
-          src="logotype.svg"
-          alt="Stjernström"
-          height="75"
-          width="170"
-          style="
-            background: 0px 0px 10px 0px #000000;
-            filter: drop-shadow(1px 0px 8px #842f8f) hue-rotate(300deg);
-          "
-        />
+
+    <!-- Watermark -->
+    <div class="watermark">
+      made with 💖
+      <a href="https://www.mehow.se/" target="_blank">
+        <img src="logotype.svg" alt="Stjernström Logo" />
       </a>
     </div>
+
+    <script src="script.js"></script>
   </body>
 </html>

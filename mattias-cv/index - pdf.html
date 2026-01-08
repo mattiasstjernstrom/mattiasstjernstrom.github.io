@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Mattias Stjernström - CV</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html {
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+      }
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+      body {
+        font-family: "Montserrat", Arial, sans-serif;
+        margin: 0;
+        color: #222;
+        min-height: 100vh;
+      }
+      .container {
+        max-width: 900px;
+        margin: 48px auto;
+        background: #fff;
+        padding: 40px 48px 32px 48px;
+      }
+      h1 {
+        margin-top: 0;
+        font-size: 2.6em;
+        color: #2a7ae2;
+        letter-spacing: 1px;
+        font-weight: 700;
+        margin: 0;
+      }
+      h2 {
+        color: #2a7ae2;
+        margin-bottom: 12px;
+        font-size: 1.35em;
+        border-left: 4px solid #2a7ae2;
+        padding-left: 12px;
+        font-weight: 700;
+        margin-top: 36px;
+      }
+      .section {
+        margin-bottom: 32px;
+      }
+      ul {
+        padding-left: 22px;
+        margin-top: 8px;
+      }
+      .contact {
+        margin-bottom: 24px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px 32px;
+        font-size: 1.05em;
+      }
+      .contact span {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .contact a {
+        color: #2a7ae2;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s;
+        word-break: break-all;
+      }
+      .contact a:hover {
+        color: #174a8b;
+        text-decoration: underline;
+      }
+      .profile {
+        font-size: 1.08em;
+        line-height: 1.7;
+        color: #333;
+        margin-bottom: 0;
+      }
+      .skills-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 14px;
+        margin-top: 8px;
+      }
+      .skill {
+        background-color: #2a7ae2;
+        color: #fff;
+        padding: 7px 20px;
+        border-radius: 20px;
+        font-size: 0.8em;
+        font-weight: 600;
+        box-shadow: 0 2px 8px rgba(42, 122, 226, 0.13);
+        border: none;
+        letter-spacing: 0.5px;
+        transition: transform 0.15s, box-shadow 0.15s;
+        cursor: default;
+        display: inline-block;
+        white-space: nowrap;
+      }
+      .exp-job {
+        margin-bottom: 18px;
+      }
+      .exp-title {
+        font-weight: 600;
+        color: #174a8b;
+        font-size: 1.08em;
+      }
+      .exp-org {
+        color: #555;
+        font-weight: 500;
+      }
+      .exp-date {
+        font-size: 0.98em;
+        color: #888;
+        margin-bottom: 4px;
+        display: block;
+      }
+      .exp-type {
+        font-size: 0.95em;
+        color: #2a7ae2;
+        font-weight: 500;
+        margin-bottom: 2px;
+        display: block;
+      }
+      .languages-list {
+        padding-left: 0;
+        margin: 0;
+      }
+      .languages-list li {
+        display: inline-block;
+        margin-right: 18px;
+        font-size: 1.05em;
+        list-style: none;
+      }
+      .profile-image {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        flex-shrink: 0;
+      }
+      .header-flex {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        margin-bottom: 18px;
+      }
+      @media (max-width: 900px) {
+        .container {
+          margin: 24px 8vw;
+          padding: 24px 4vw 18px 4vw;
+        }
+      }
+      @media (max-width: 700px) {
+        .container {
+          padding: 12px 2vw 12px 2vw;
+        }
+        h1 {
+          font-size: 1.5em;
+        }
+        h2 {
+          font-size: 1.1em;
+          padding-left: 8px;
+        }
+        .header-flex {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 12px;
+        }
+        .profile-image {
+          width: 90px;
+          height: 90px;
+        }
+        .contact {
+          flex-direction: column;
+          gap: 8px;
+          font-size: 1em;
+        }
+        .skills-list {
+          gap: 8px 8px;
+        }
+        .skill {
+          padding: 6px 14px;
+          font-size: 0.95em;
+        }
+        .languages-list li {
+          margin-right: 10px;
+        }
+      }
+      @media (max-width: 480px) {
+        .container {
+          margin: 0;
+          border-radius: 0;
+          box-shadow: none;
+          padding: 8px 2vw 8px 2vw;
+        }
+        .profile-image {
+          width: 70px;
+          height: 70px;
+        }
+        .skills-list {
+          gap: 6px 4px;
+        }
+        .skill {
+          padding: 5px 10px;
+          font-size: 0.9em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header-flex">
+        <img
+          src="https://avatars.githubusercontent.com/u/126202425"
+          alt="Mattias Stjernström"
+          class="profile-image"
+        />
+        <div>
+          <h1>Mattias Stjernström</h1>
+          <small>Python Developer | AI Enthusiast | Web Developer</small>
+        </div>
+      </div>
+      <div class="contact">
+        <span>
+          📧
+          <a href="mailto:mail@mehow.se">mail@mehow.se</a>
+        </span>
+        <span>📱 <em>+46 76 878 41 56</em></span>
+        <span>📍 <em>Norberg, Västmanland, Sweden</em></span>
+        <span>
+          🐙
+          <a href="https://github.com/mattiasstjernstrom" target="_blank"
+            >GitHub</a
+          >
+        </span>
+        <span>
+          🔗
+          <a
+            href="https://www.linkedin.com/in/mattiasstjernstrom"
+            target="_blank"
+            >LinkedIn</a
+          >
+        </span>
+        <span>🌐 <a href="https://mehow.se" target="_blank">mehow.se</a></span>
+      </div>
+
+      <div class="section">
+        <h2>Profile</h2>
+        <p class="profile">
+          Python developer with a focus on artificial intelligence, recently
+          graduated from Teknikhögskolan. Seeking full-time opportunities to
+          apply and further develop skills in Python, AI, and machine
+          learning.<br /><br />
+          <strong>Who am I?</strong><br />
+          I am a 36-year-old man, living in Norberg with my wife and three
+          children. Passionate about programming since childhood, starting with
+          websites in 1997. Recently fascinated by AI, I enrolled in a
+          specialized program and quickly got hooked. Today, I am both a web and
+          Python developer with additional knowledge in machine learning and
+          AI.<br /><br />
+          Eager to bring my skills and enthusiasm into the professional world
+          and contribute to exciting projects. If you're looking for a driven
+          and curious developer with a strong foundation and genuine passion for
+          tech, let’s connect!
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Skills</h2>
+        <div class="skills-list">
+          <span class="skill">HTML</span>
+          <span class="skill">CSS</span>
+          <span class="skill">JavaScript</span>
+          <span class="skill">React</span>
+          <span class="skill">Python</span>
+          <span class="skill">FastAPI</span>
+          <span class="skill">Django</span>
+          <span class="skill">Flask</span>
+          <span class="skill">Git</span>
+          <span class="skill">REST APIs</span>
+          <span class="skill">SQL</span>
+          <span class="skill">Agile</span>
+          <span class="skill">Machine Learning</span>
+          <span class="skill">Computer Vision</span>
+          <span class="skill">Microsoft Office</span>
+          <span class="skill">TensorFlow</span>
+          <span class="skill">PyTorch</span>
+          <span class="skill">OpenCV</span>
+          <span class="skill">NumPy</span>
+          <span class="skill">Pandas</span>
+          <span class="skill">Scikit-learn</span>
+          <span class="skill">Matplotlib</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Experience</h2>
+        <div class="exp-job">
+          <span class="exp-title">AI-developer</span>
+          <span class="exp-org">– Research Institutes of Sweden, Västerås</span
+          ><br />
+          <span class="exp-type">LIA (Internship)</span>
+          <span class="exp-date">Feb 2025 – May 2025</span>
+          <ul>
+            <li>
+              Developed AI-driven applications using Python and machine learning
+              frameworks.
+            </li>
+            <li>
+              Worked on Computer Vision and Artificial Intelligence projects,
+              including image classification and object detection.
+            </li>
+            <li>
+              Programmed a Robot using Python and various libraries for
+              automation tasks such as photo capture and data processing.
+            </li>
+          </ul>
+        </div>
+        <div class="exp-job">
+          <span class="exp-title">AI-developer</span>
+          <span class="exp-org">– Prevas AB, Västerås</span><br />
+          <span class="exp-type">LIA (Internship)</span>
+          <span class="exp-date">Aug 2024 – Nov 2024</span>
+          <ul>
+            <li>Developed AI solutions using Python and TensorFlow.</li>
+            <li>
+              Implemented automated technologies for workflow optimization.
+            </li>
+          </ul>
+        </div>
+        <div class="exp-job">
+          <span class="exp-title">Web Developer</span>
+          <span class="exp-org">– Non profit</span><br />
+          <span class="exp-date">2000 – present</span>
+          <ul>
+            <li>Built responsive websites with HTML, CSS, and JavaScript.</li>
+            <li>
+              Worked closely with clients to gather requirements and deliver
+              solutions.
+            </li>
+            <li>
+              Developed and maintained web applications using PHP, Python, and
+              JavaScript.
+            </li>
+            <li>
+              Created and managed databases using MySQL, SQLite, and PostgreSQL.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Education</h2>
+        <strong>Python-developer with AI specialization</strong><br />
+        Teknikhögskolan, Västerås<br />
+        <span class="exp-date">Aug 2023 – May 2025</span>
+      </div>
+
+      <div class="section">
+        <h2>Languages</h2>
+        <ul class="languages-list">
+          <li>Swedish (Native)</li>
+          <li>English (Fluent)</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
