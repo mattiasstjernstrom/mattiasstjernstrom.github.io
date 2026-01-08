@@ -2,391 +2,457 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mattias Stjernström - CV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap"
       rel="stylesheet"
     />
     <style>
-      html {
+      :root {
+        --primary: #2d3436;
+        --accent: #6c5ce7; /* Deep soft purple */
+        --accent-light: #a29bfe;
+        --text: #636e72;
+        --bg-body: #dfe6e9;
+        --bg-card: #ffffff;
+        --border: #f1f2f6;
+      }
+
+      * {
         box-sizing: border-box;
-        scroll-behavior: smooth;
       }
-      *,
-      *:before,
-      *:after {
-        box-sizing: inherit;
-      }
+
       body {
-        font-family: "Montserrat", Arial, sans-serif;
         margin: 0;
-        background: linear-gradient(120deg, #e3eafc 0%, #f4f4f4 100%);
-        color: #222;
-        min-height: 100vh;
+        font-family: "Inter", sans-serif;
+        background-color: var(--bg-body);
+        color: var(--primary);
+        line-height: 1.6;
       }
-      .container {
-        max-width: 900px;
-        margin: 48px auto;
-        background: #fff;
-        padding: 40px 48px 32px 48px;
-        border-radius: 18px;
-        box-shadow: 0 6px 32px rgba(42, 122, 226, 0.1),
-          0 1.5px 4px rgba(0, 0, 0, 0.04);
-      }
-      h1 {
-        margin-top: 0;
-        font-size: 2.6em;
-        color: #2a7ae2;
-        letter-spacing: 1px;
-        font-weight: 700;
+
+      h1, h2, h3 {
+        font-family: "Montserrat", sans-serif;
         margin: 0;
       }
-      h2 {
-        color: #2a7ae2;
-        margin-bottom: 12px;
-        font-size: 1.35em;
-        border-left: 4px solid #2a7ae2;
-        padding-left: 12px;
-        font-weight: 700;
-        margin-top: 36px;
-      }
-      .section {
-        margin-bottom: 32px;
-      }
-      ul {
-        padding-left: 22px;
-        margin-top: 8px;
-      }
-      .contact {
-        margin-bottom: 24px;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 18px 32px;
-        font-size: 1.05em;
-      }
-      .contact span {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-      }
-      .contact a {
-        color: #2a7ae2;
+
+      a {
+        color: var(--accent);
         text-decoration: none;
-        font-weight: 500;
-        transition: color 0.2s;
-        word-break: break-all;
       }
-      .contact a:hover {
-        color: #174a8b;
+
+      a:hover {
         text-decoration: underline;
       }
-      .profile {
-        font-size: 1.08em;
-        line-height: 1.7;
-        color: #333;
-        margin-bottom: 0;
+
+      .resume-container {
+        max-width: 1000px;
+        margin: 40px auto;
+        background: var(--bg-card);
+        display: grid;
+        grid-template-columns: 320px 1fr;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
       }
+
+      /* Sidebar */
+      .sidebar {
+        background: #f8f9fa;
+        padding: 40px 30px;
+        border-right: 1px solid var(--border);
+      }
+
+      .profile-img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 25px;
+        border: 4px solid #fff;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        display: block;
+      }
+
+      .contact-info {
+        margin-bottom: 30px;
+        font-size: 0.9em;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+        color: var(--text);
+        word-break: break-word;
+      }
+
+      .contact-icon {
+        margin-right: 10px;
+        font-size: 1.1em;
+        width: 20px;
+        text-align: center;
+      }
+
+      .sidebar-section {
+        margin-bottom: 35px;
+      }
+
+      .sidebar-title {
+        font-size: 1.1em;
+        color: var(--primary);
+        margin-bottom: 15px;
+        padding-bottom: 8px;
+        border-bottom: 2px solid var(--accent-light);
+      }
+
       .skills-list {
         display: flex;
         flex-wrap: wrap;
-        gap: 10px 14px;
-        margin-top: 8px;
+        gap: 8px;
       }
-      .skill {
-        background-color: #2a7ae2;
-        color: #fff;
-        padding: 7px 20px;
-        border-radius: 20px;
-        font-size: 0.8em;
-        font-weight: 600;
-        box-shadow: 0 2px 8px rgba(42, 122, 226, 0.13);
-        border: none;
-        letter-spacing: 0.5px;
-        transition: transform 0.15s, box-shadow 0.15s;
-        cursor: default;
-        display: inline-block;
-        white-space: nowrap;
-      }
-      .exp-job {
-        margin-bottom: 18px;
-      }
-      .exp-title {
-        font-weight: 600;
-        color: #174a8b;
-        font-size: 1.08em;
-      }
-      .exp-org {
-        color: #555;
+
+      .skill-tag {
+        background: #fff;
+        border: 1px solid var(--accent-light);
+        color: var(--accent);
+        padding: 4px 10px;
+        border-radius: 6px;
+        font-size: 0.85em;
         font-weight: 500;
       }
-      .exp-date {
-        font-size: 0.98em;
-        color: #888;
-        margin-bottom: 4px;
-        display: block;
-      }
-      .exp-type {
-        font-size: 0.95em;
-        color: #2a7ae2;
-        font-weight: 500;
-        margin-bottom: 2px;
-        display: block;
-      }
-      .languages-list {
-        padding-left: 0;
-        margin: 0;
-      }
-      .languages-list li {
-        display: inline-block;
-        margin-right: 18px;
-        font-size: 1.05em;
+
+      .lang-list ul {
         list-style: none;
+        padding: 0;
       }
-      .profile-image {
-        width: 120px;
-        height: 120px;
-        border-radius: 50%;
-        object-fit: cover;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        flex-shrink: 0;
+
+      .lang-list li {
+        margin-bottom: 8px;
+        color: var(--text);
+        font-size: 0.95em;
       }
-      .header-flex {
+
+      /* Main Content */
+      .main-content {
+        padding: 50px;
+      }
+
+      .header {
+        margin-bottom: 40px;
+      }
+
+      .name {
+        font-size: 2.8em;
+        line-height: 1.1;
+        margin-bottom: 8px;
+        color: var(--primary);
+      }
+
+      .title {
+        font-size: 1.2em;
+        color: var(--accent);
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+
+      .section {
+        margin-bottom: 40px;
+      }
+
+      .section-title {
+        font-size: 1.4em;
+        color: var(--primary);
+        margin-bottom: 20px;
         display: flex;
         align-items: center;
-        gap: 28px;
-        margin-bottom: 18px;
       }
-      @media (max-width: 900px) {
-        .container {
-          margin: 24px 8vw;
-          padding: 24px 4vw 18px 4vw;
-        }
+
+      .section-title::before {
+        content: "";
+        display: block;
+        width: 6px;
+        height: 24px;
+        background: var(--accent);
+        margin-right: 12px;
+        border-radius: 3px;
       }
-      @media (max-width: 700px) {
-        .container {
-          padding: 12px 2vw 12px 2vw;
-        }
-        h1 {
-          font-size: 1.5em;
-        }
-        h2 {
-          font-size: 1.1em;
-          padding-left: 8px;
-        }
-        .header-flex {
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 12px;
-        }
-        .profile-image {
-          width: 90px;
-          height: 90px;
-        }
-        .contact {
-          flex-direction: column;
-          gap: 8px;
-          font-size: 1em;
-        }
-        .skills-list {
-          gap: 8px 8px;
-        }
-        .skill {
-          padding: 6px 14px;
-          font-size: 0.95em;
-        }
-        .languages-list li {
-          margin-right: 10px;
-        }
+
+      .intro-text {
+        color: var(--text);
+        margin-bottom: 20px;
       }
-      @media (max-width: 480px) {
-        .container {
+
+      /* Timeline Experience */
+      .timeline {
+        position: relative;
+        padding-left: 20px;
+        border-left: 2px solid var(--border);
+      }
+
+      .timeline-item {
+        position: relative;
+        margin-bottom: 30px;
+      }
+
+      .timeline-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .timeline-dot {
+        position: absolute;
+        left: -26px;
+        top: 6px;
+        width: 10px;
+        height: 10px;
+        background: var(--accent);
+        border-radius: 50%;
+        border: 2px solid #fff;
+        box-shadow: 0 0 0 2px var(--accent-light);
+      }
+
+      .role {
+        font-size: 1.1em;
+        font-weight: 600;
+        color: var(--primary);
+      }
+
+      .company {
+        font-weight: 500;
+        color: var(--text);
+      }
+
+      .period {
+        font-size: 0.85em;
+        color: var(--accent);
+        margin-bottom: 8px;
+        display: block;
+        font-weight: 600;
+      }
+
+      .description ul {
+        margin: 8px 0 0;
+        padding-left: 20px;
+        color: var(--text);
+      }
+
+      .description li {
+        margin-bottom: 5px;
+      }
+
+      .footer {
+        text-align: center;
+        font-size: 0.85em;
+        color: #b2bec3;
+        margin-top: 50px;
+        padding-bottom: 20px;
+      }
+
+      @media (max-width: 800px) {
+        .resume-container {
+          grid-template-columns: 1fr;
           margin: 0;
           border-radius: 0;
           box-shadow: none;
-          padding: 8px 2vw 8px 2vw;
         }
-        .profile-image {
-          width: 70px;
-          height: 70px;
+        
+        .sidebar {
+          border-right: none;
+          border-bottom: 1px solid var(--border);
+          text-align: center;
         }
+
+        .profile-img {
+          margin: 0 auto 20px;
+        }
+
+        .contact-info {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 15px;
+        }
+        
+        .contact-item {
+          margin-bottom: 0;
+        }
+
         .skills-list {
-          gap: 6px 4px;
+          justify-content: center;
         }
-        .skill {
-          padding: 5px 10px;
-          font-size: 0.9em;
+
+        .main-content {
+          padding: 30px 20px;
         }
+      }
+      
+      @media print {
+        body { background: white; }
+        .resume-container { box-shadow: none; margin: 0; max-width: 100%; }
+        .sidebar { background: #fff; border-right: 1px solid #ddd; }
+        .skill-tag { border: 1px solid #ccc; color: #000; }
+        .timeline-dot { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <div class="header-flex">
+    <div class="resume-container">
+      <aside class="sidebar">
         <img
           src="https://avatars.githubusercontent.com/u/126202425"
           alt="Mattias Stjernström"
-          class="profile-image"
+          class="profile-img"
         />
-        <div>
-          <h1>Mattias Stjernström</h1>
-          <small>Python Developer | AI Enthusiast | Web Developer</small>
-        </div>
-      </div>
-      <div class="contact">
-        <span>
-          📧
-          <a href="mailto:mail@mehow.se">mail@mehow.se</a>
-        </span>
-        <span>📱 <em>+46 76 878 41 56</em></span>
-        <span>📍 <em>Norberg, Västmanland, Sweden</em></span>
-        <span>
-          🐙
-          <a href="https://github.com/mattiasstjernstrom" target="_blank"
-            >GitHub</a
-          >
-        </span>
-        <span>
-          🔗
-          <a
-            href="https://www.linkedin.com/in/mattiasstjernstrom"
-            target="_blank"
-            >LinkedIn</a
-          >
-        </span>
-        <span>🌐 <a href="https://mehow.se" target="_blank">mehow.se</a></span>
-      </div>
 
-      <div class="section">
-        <h2>Profile</h2>
-        <p class="profile">
-          Python developer with a focus on artificial intelligence, recently
-          graduated from Teknikhögskolan. Seeking full-time opportunities to
-          apply and further develop skills in Python, AI, and machine
-          learning.<br /><br />
-          <strong>Who am I?</strong><br />
-          I am a 36-year-old man, living in Norberg with my wife and three
-          children. Passionate about programming since childhood, starting with
-          websites in 1997. Recently fascinated by AI, I enrolled in a
-          specialized program and quickly got hooked. Today, I am both a web and
-          Python developer with additional knowledge in machine learning and
-          AI.<br /><br />
-          Eager to bring my skills and enthusiasm into the professional world
-          and contribute to exciting projects. If you're looking for a driven
-          and curious developer with a strong foundation and genuine passion for
-          tech, let’s connect!
-        </p>
-      </div>
-
-      <div class="section">
-        <h2>Skills</h2>
-        <div class="skills-list">
-          <span class="skill">HTML</span>
-          <span class="skill">CSS</span>
-          <span class="skill">JavaScript</span>
-          <span class="skill">React</span>
-          <span class="skill">Python</span>
-          <span class="skill">FastAPI</span>
-          <span class="skill">Django</span>
-          <span class="skill">Flask</span>
-          <span class="skill">Git</span>
-          <span class="skill">REST APIs</span>
-          <span class="skill">SQL</span>
-          <span class="skill">Agile</span>
-          <span class="skill">Machine Learning</span>
-          <span class="skill">Computer Vision</span>
-          <span class="skill">Microsoft Office</span>
-          <span class="skill">TensorFlow</span>
-          <span class="skill">PyTorch</span>
-          <span class="skill">OpenCV</span>
-          <span class="skill">NumPy</span>
-          <span class="skill">Pandas</span>
-          <span class="skill">Scikit-learn</span>
-          <span class="skill">Matplotlib</span>
+        <div class="contact-info">
+          <div class="contact-item">
+            <span class="contact-icon">📧</span>
+            <a href="mailto:mail@mehow.se">mail@mehow.se</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📱</span>
+            <span>+46 76 878 41 56</span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📍</span>
+            <span>Norberg, Sweden</span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">🐙</span>
+            <a href="https://github.com/mattiasstjernstrom" target="_blank">GitHub</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">🔗</span>
+            <a href="https://www.linkedin.com/in/mattiasstjernstrom" target="_blank">LinkedIn</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">🌐</span>
+            <a href="https://mehow.se" target="_blank">mehow.se</a>
+          </div>
         </div>
-      </div>
 
-      <div class="section">
-        <h2>Experience</h2>
-        <div class="exp-job">
-          <span class="exp-title">AI-developer</span>
-          <span class="exp-org">– Research Institutes of Sweden, Västerås</span
-          ><br />
-          <span class="exp-type">LIA (Internship)</span>
-          <span class="exp-date">Feb 2025 – May 2025</span>
-          <ul>
-            <li>
-              Developed AI-driven applications using Python and machine learning
-              frameworks.
-            </li>
-            <li>
-              Worked on Computer Vision and Artificial Intelligence projects,
-              including image classification and object detection.
-            </li>
-            <li>
-              Programmed a Robot using Python and various libraries for
-              automation tasks such as photo capture and data processing.
-            </li>
-          </ul>
+        <div class="sidebar-section">
+          <div class="sidebar-title">Skills</div>
+          <div class="skills-list">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">AI/ML</span>
+            <span class="skill-tag">TensorFlow</span>
+            <span class="skill-tag">PyTorch</span>
+            <span class="skill-tag">OpenCV</span>
+            <span class="skill-tag">FastAPI</span>
+            <span class="skill-tag">Django</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">HTML/CSS</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">Pandas</span>
+            <span class="skill-tag">NumPy</span>
+          </div>
         </div>
-        <div class="exp-job">
-          <span class="exp-title">AI-developer</span>
-          <span class="exp-org">– Prevas AB, Västerås</span><br />
-          <span class="exp-type">LIA (Internship)</span>
-          <span class="exp-date">Aug 2024 – Nov 2024</span>
-          <ul>
-            <li>Developed AI solutions using Python and TensorFlow.</li>
-            <li>
-              Implemented automated technologies for workflow optimization.
-            </li>
-          </ul>
-        </div>
-        <div class="exp-job">
-          <span class="exp-title">Web Developer</span>
-          <span class="exp-org">– Non profit</span><br />
-          <span class="exp-date">2000 – present</span>
-          <ul>
-            <li>Built responsive websites with HTML, CSS, and JavaScript.</li>
-            <li>
-              Worked closely with clients to gather requirements and deliver
-              solutions.
-            </li>
-            <li>
-              Developed and maintained web applications using PHP, Python, and
-              JavaScript.
-            </li>
-            <li>
-              Created and managed databases using MySQL, SQLite, and PostgreSQL.
-            </li>
-          </ul>
-        </div>
-      </div>
 
-      <div class="section">
-        <h2>Education</h2>
-        <strong>Python-developer with AI specialization</strong><br />
-        Teknikhögskolan, Västerås<br />
-        <span class="exp-date">Aug 2023 – May 2025</span>
-      </div>
+        <div class="sidebar-section">
+          <div class="sidebar-title">Languages</div>
+          <div class="lang-list">
+            <ul>
+              <li><strong>Swedish</strong> (Native)</li>
+              <li><strong>English</strong> (Fluent)</li>
+            </ul>
+          </div>
+        </div>
+      </aside>
 
-      <div class="section">
-        <h2>Languages</h2>
-        <ul class="languages-list">
-          <li>Swedish (Native)</li>
-          <li>English (Fluent)</li>
-        </ul>
-      </div>
+      <main class="main-content">
+        <header class="header">
+          <h1 class="name">Mattias Stjernström</h1>
+          <div class="title">Python Developer | AI Enthusiast | Web Developer</div>
+        </header>
+
+        <section class="section">
+          <h2 class="section-title">Profile</h2>
+          <div class="intro-text">
+            <p>
+              Python developer with a focus on artificial intelligence, recently graduated from Teknikhögskolan. 
+              Seeking full-time opportunities to apply and further develop skills in Python, AI, and machine learning.
+            </p>
+            <p>
+              <strong>Who am I?</strong><br>
+              I am a 37-year-old man, living in Norberg with my wife and three children. 
+              Passionate about programming since childhood, starting with websites in 1997. 
+              Recently fascinated by AI, I enrolled in a specialized program and quickly got hooked. 
+              Today, I am both a web and Python developer with additional knowledge in machine learning and AI.
+            </p>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">Experience</h2>
+          <div class="timeline">
+            
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="role">AI-developer (Internship)</div>
+              <div class="company">Research Institutes of Sweden (RI.SE), Västerås</div>
+              <span class="period">Feb 2025 – May 2025</span>
+              <div class="description">
+                <ul>
+                  <li>Developed AI-driven applications using Python and machine learning frameworks.</li>
+                  <li>Worked on Computer Vision (image classification, object detection).</li>
+                  <li>Programmed robots using Python for automation/data processing.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="role">AI-developer (Internship)</div>
+              <div class="company">Prevas AB, Västerås</div>
+              <span class="period">Aug 2024 – Nov 2024</span>
+              <div class="description">
+                <ul>
+                  <li>Developed AI solutions using Python and TensorFlow.</li>
+                  <li>Implemented automated technologies for workflow optimization.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="role">Web Developer</div>
+              <div class="company">Non-profit</div>
+              <span class="period">2000 – Present</span>
+              <div class="description">
+                <ul>
+                  <li>Built responsive websites (HTML, CSS, JS).</li>
+                  <li>Client collaboration and requirement gathering.</li>
+                  <li>Maintained web apps (PHP, Python) and databases (MySQL, PostgreSQL).</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">Education</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="role">Python Developer (AI Specialization)</div>
+              <div class="company">Teknikhögskolan, Västerås</div>
+              <span class="period">Aug 2023 – May 2025</span>
+            </div>
+          </div>
+        </section>
+
+      </main>
     </div>
-    <footer
-      style="
-        text-align: center;
-        font-size: 0.9em;
-        color: #888;
-        margin-bottom: 30px;
-      "
-    >
-      A <a href="https://www.mehow.se" target="_blank">mehow.se</a> production
-      &middot; 2025
-    </footer>
+    
+    <div class="footer">
+      A <a href="https://www.mehow.se" target="_blank">mehow.se</a> production &middot; 2026
+    </div>
   </body>
 </html>
