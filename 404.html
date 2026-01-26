@@ -1,38 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>404 Not Found</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 | Mattias Stjernström</title>
+    <meta name="description" content="Page not found.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
-      body {
-        background: #f8f8f8;
-        color: #333;
-        font-family: Arial, sans-serif;
-        text-align: center;
-        padding: 10% 2em;
-      }
-      h1 {
-        font-size: 4em;
-        margin-bottom: 0.2em;
-      }
-      p {
-        font-size: 1.5em;
-        margin-top: 0;
-      }
-      a {
-        color: #007acc;
-        text-decoration: none;
-        font-weight: bold;
-      }
-      a:hover {
-        text-decoration: underline;
-      }
+        /* 404 Specific Styles */
+        .error-container {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .error-code {
+            font-family: var(--font-display);
+            font-size: clamp(8rem, 20vw, 15rem);
+            font-weight: 900;
+            line-height: 0.9;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .error-msg {
+            font-size: 1.5rem;
+            color: var(--text-dim);
+            max-width: 600px;
+            margin-bottom: 3rem;
+        }
     </style>
-  </head>
-  <body>
-    <h1>404</h1>
-    <p>Sorry, the page you are looking for was not found.</p>
-    <p><a href="/">Go to Homepage</a></p>
-  </body>
+</head>
+<body>
+    <!-- Noise Texture -->
+    <div class="noise-overlay"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="wrapper nav-content">
+            <div class="logo-container">
+                <a href="/"><span>mehow.se</span></a>
+            </div>
+
+            <ul class="nav-menu">
+                <li><a href="/#projects">Work</a></li>
+                <li><a href="/#services">Expertise</a></li>
+                <li><a href="/#about">About</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="/#contact" class="cta-btn nav-cta">Let's Talk</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="hero">
+        <!-- Tech Grid Background -->
+        <div class="tech-grid"></div>
+
+        <div class="wrapper error-container">
+            <div class="error-code">404</div>
+            <h1 class="hero-text" style="font-size: 2.5rem; margin-bottom: 1rem;">Lost in the Digital Void?</h1>
+            <p class="error-msg">
+                The page you are looking for seems to have vanished into the ether. Let's get you back on solid ground.
+            </p>
+            <a href="/" class="cta-btn">Return to Homepage</a>
+        </div>
+    </main>
+
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+    </button>
+    <script src="script.js"></script>
+</body>
 </html>
