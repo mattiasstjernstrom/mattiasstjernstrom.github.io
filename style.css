@@ -1062,7 +1062,7 @@ footer {
 /* Footer Refinements Removal - Cleaned up by new structure */
 @media (max-width: 900px) {
     .wrapper {
-        padding: 0 1.5rem;
+        padding: 0 1rem;
     }
 
     .about-grid {
@@ -1158,18 +1158,28 @@ footer {
 
     .big-project-card {
         grid-template-columns: 1fr;
-        gap: 2rem;
-        margin-bottom: 4rem;
-        padding: 1.25rem;
+        gap: 1.5rem; /* Reduced gap */
+        margin-bottom: 3rem;
+        padding: 1rem; /* Reduced padding */
         border: 1px solid var(--card-border);
-        border-radius: 20px;
+        border-radius: 16px;
         background: var(--card-bg-alt);
         width: 100%;
         box-sizing: border-box;
     }
 
     .project-info h3 {
-        font-size: 2.2rem; /* Reduced to prevent overflow on small screens */
+        font-size: 1.8rem; /* Further reduced */
+    }
+
+    .tags {
+        flex-wrap: wrap; /* Ensure tags wrap */
+        gap: 0.5rem;
+    }
+
+    .tag {
+        padding: 0.4rem 1rem;
+        font-size: 0.8rem;
     }
 
     .big-project-card:nth-child(even) {
@@ -1183,8 +1193,8 @@ footer {
 
     /* Upcoming project mobile fixes - Reworked */
     .upcoming-project {
-        padding: 1.75rem;
-        border-radius: 24px;
+        padding: 1.25rem;
+        border-radius: 20px;
         background: linear-gradient(135deg, rgba(139, 92, 246, 0.08), rgba(6, 182, 212, 0.04));
     }
 
