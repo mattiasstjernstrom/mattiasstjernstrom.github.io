@@ -39,30 +39,6 @@ It showcases my work as a **Digital Architect & AI Alchemist**, featuring a prem
   - DOM manipulation for theme toggling and particle generation.
   - No external frameworks (Vanilla JS) for maximum performance.
 
-## 🚀 Getting Started
-
-To run this project locally:
-
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/mattiasstjernstrom/mattiasstjernstrom.github.io.git
-    cd mattiasstjernstrom.github.io
-    ```
-
-2.  **Open `index.html`** in your browser directly, or serve it using a local server (recommended for optimal asset loading):
-    
-    *Using Python:*
-    ```bash
-    python -m http.server 8000
-    ```
-    
-    *Using Node/npx:*
-    ```bash
-    npx serve
-    ```
-
-3.  Visit `http://localhost:8000` (or the port shown in your terminal).
-
 ## 📂 Project Structure
 
 - `index.html`: The main landing page containing all sections.
