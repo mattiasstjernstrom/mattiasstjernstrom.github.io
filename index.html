@@ -1,74 +1,387 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>mehow.se ~ terminal</title>
+    <title>mehow.se | Webb & Kod Byrå</title>
+    <meta name="description" content="Vi bygger din digitala framtid. Webbutveckling, appar, UX/UI-design och AI-lösningar." />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Noto+Sans+Mono:wght@400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="terminal">
-      <div class="terminal-header">
-        <div class="terminal-buttons">
-          <div class="circle red"></div>
-          <div class="circle yellow"></div>
-          <div class="circle green"></div>
-        </div>
-        <div class="terminal-title">guest@mehow.se: ~</div>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="#" class="nav-logo">
+          <span class="logo-bracket">&lt;</span>mehow<span class="logo-bracket">/&gt;</span>
+        </a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+          <span class="hamburger"></span>
+        </button>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#services" class="nav-link">Tjänster</a></li>
+          <li><a href="#projects" class="nav-link">Projekt</a></li>
+          <li><a href="#about" class="nav-link">Om oss</a></li>
+          <li><a href="#contact" class="nav-link nav-cta">Kontakt</a></li>
+        </ul>
       </div>
-      <div class="terminal-content" id="terminal-content">
-        <div class="output">
-          Welcome to <span class="keyword">mehow.se</span> terminal v2.0<br />
-          Type <span class="string">'help'</span> to see available commands.<br />
-        </div>
-        
-        <div class="command-line">
-          <span class="prompt">
-            <span class="tilda">➜</span> <span class="directory">~</span>
-          </span>
-          <input type="text" id="cmd-input" autocomplete="off" spellcheck="false" autofocus />
-        </div>
-      </div>
-    </div>
+    </nav>
 
-    <!-- Universal mehow.se-watermark for demo sites (white text) -->
-    <div
-      style="
-        position: fixed;
-        bottom: 0px;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-        width: 175px;
-        text-align: center;
-        color: #fff;
-        line-height: 0px;
-        filter: drop-shadow(1px 0px 8px #842f8f);
-        font-family: Arial, Helvetica, sans-serif;
-        scale: 0.7;
-        z-index: 1000;
-      "
-    >
-      made with 💖<a href="https://www.mehow.se/"
-        ><img
-          src="logotype.svg"
-          alt="Stjernström"
-          height="75"
-          width="170"
-          style="
-            background: 0px 0px 10px 0px #000000;
-            filter: drop-shadow(1px 0px 8px #842f8f) hue-rotate(300deg);
-          "
-        />
-      </a>
-    </div>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="hero-bg">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+      </div>
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 class="hero-title animate-in">
+            Vi bygger din<br />
+            <span class="gradient-text">digitala framtid</span>
+          </h1>
+          <p class="hero-subtitle animate-in delay-1">
+            Kreativ webbyrå som förvandlar idéer till kraftfulla digitala upplevelser. 
+            Från koncept till kod – vi levererar lösningar som gör skillnad.
+          </p>
+          <div class="hero-cta animate-in delay-2">
+            <a href="#projects" class="btn btn-primary">
+              <span>Se våra projekt</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+            <a href="#contact" class="btn btn-secondary">Kontakta oss</a>
+          </div>
+        </div>
+        <div class="hero-terminal animate-in delay-3">
+          <div class="terminal">
+            <div class="terminal-header">
+              <div class="terminal-buttons">
+                <div class="circle red"></div>
+                <div class="circle yellow"></div>
+                <div class="circle green"></div>
+              </div>
+              <div class="terminal-title">guest@mehow.se: ~</div>
+            </div>
+            <div class="terminal-content" id="terminal-content">
+              <div class="output">
+                Welcome to <span class="keyword">mehow.se</span> terminal v2.0<br />
+                Type <span class="string">'help'</span> to see available commands.<br />
+              </div>
+              <div class="command-line">
+                <span class="prompt">
+                  <span class="tilda">➜</span> <span class="directory">~</span>
+                </span>
+                <input type="text" id="cmd-input" autocomplete="off" spellcheck="false" placeholder="Skriv ett kommando..." />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <span>Scrolla ner</span>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 5v14M5 12l7 7 7-7"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">// Vad vi gör</span>
+          <h2 class="section-title">Våra <span class="gradient-text">tjänster</span></h2>
+          <p class="section-subtitle">Helhetslösningar för din digitala närvaro</p>
+        </div>
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="2" y="3" width="20" height="14" rx="2"/>
+                <path d="M8 21h8M12 17v4"/>
+              </svg>
+            </div>
+            <h3>Webbutveckling</h3>
+            <p>Moderna, snabba och responsiva webbplatser byggda med de senaste teknikerna. React, Next.js, Vue – vi behärskar dem alla.</p>
+            <ul class="service-tags">
+              <li>React</li>
+              <li>Next.js</li>
+              <li>Vue</li>
+              <li>TypeScript</li>
+            </ul>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="5" y="2" width="14" height="20" rx="2"/>
+                <path d="M12 18h.01"/>
+              </svg>
+            </div>
+            <h3>Apputveckling</h3>
+            <p>Native och cross-platform appar som levererar exceptionella användarupplevelser på både iOS och Android.</p>
+            <ul class="service-tags">
+              <li>React Native</li>
+              <li>Flutter</li>
+              <li>Swift</li>
+              <li>Kotlin</li>
+            </ul>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                <path d="M2 17l10 5 10-5"/>
+                <path d="M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <h3>UX/UI Design</h3>
+            <p>Användarvänlig design som engagerar och konverterar. Vi skapar gränssnitt som både ser fantastiska ut och fungerar perfekt.</p>
+            <ul class="service-tags">
+              <li>Figma</li>
+              <li>Prototyping</li>
+              <li>User Research</li>
+              <li>Design Systems</li>
+            </ul>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 2a4 4 0 0 1 4 4v2a4 4 0 0 1-8 0V6a4 4 0 0 1 4-4z"/>
+                <path d="M16 14H8a4 4 0 0 0-4 4v2h16v-2a4 4 0 0 0-4-4z"/>
+                <circle cx="12" cy="6" r="1"/>
+              </svg>
+            </div>
+            <h3>AI-lösningar</h3>
+            <p>Intelligenta automatiseringar och AI-integrationer som effektiviserar verksamheten och skapar nya möjligheter.</p>
+            <ul class="service-tags">
+              <li>ChatGPT</li>
+              <li>ML Models</li>
+              <li>Automation</li>
+              <li>Chatbots</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">// Vårt arbete</span>
+          <h2 class="section-title">Utvalda <span class="gradient-text">projekt</span></h2>
+          <p class="section-subtitle">Se hur vi har hjälpt våra kunder att lyckas digitalt</p>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card project-large">
+            <div class="project-image">
+              <div class="project-placeholder">
+                <span class="code-line">&lt;e-commerce/&gt;</span>
+              </div>
+            </div>
+            <div class="project-content">
+              <span class="project-category">E-handel</span>
+              <h3>Fashionista Store</h3>
+              <p>Komplett e-handelsplattform med headless CMS, betalningslösningar och AI-driven produktrekommendation.</p>
+              <div class="project-tech">
+                <span>Next.js</span>
+                <span>Stripe</span>
+                <span>Sanity</span>
+              </div>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-image">
+              <div class="project-placeholder">
+                <span class="code-line">&lt;saas-app/&gt;</span>
+              </div>
+            </div>
+            <div class="project-content">
+              <span class="project-category">SaaS</span>
+              <h3>TaskFlow Pro</h3>
+              <p>Projekthanteringssystem med realtidssamarbete och Kanban-boards.</p>
+              <div class="project-tech">
+                <span>React</span>
+                <span>Node.js</span>
+                <span>WebSocket</span>
+              </div>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-image">
+              <div class="project-placeholder">
+                <span class="code-line">&lt;mobile-app/&gt;</span>
+              </div>
+            </div>
+            <div class="project-content">
+              <span class="project-category">Mobilapp</span>
+              <h3>FitTracker</h3>
+              <p>Träningsapp med AI-coachning och personliga träningsprogram.</p>
+              <div class="project-tech">
+                <span>React Native</span>
+                <span>Firebase</span>
+                <span>TensorFlow</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-content">
+            <span class="section-tag">// Om mehow.se</span>
+            <h2 class="section-title">Passion för<br /><span class="gradient-text">perfekt kod</span></h2>
+            <p>
+              Vi är ett team av utvecklare och designers som brinner för att skapa digitala lösningar 
+              som gör skillnad. Med över 10 års erfarenhet har vi hjälpt startup-företag och etablerade 
+              varumärken att förverkliga sina digitala visioner.
+            </p>
+            <p>
+              Vårt fokus ligger alltid på kvalitet, prestanda och användarupplevelse. Vi tror på 
+              transparenta processer, nära samarbeten och att leverera resultat som överträffar förväntningarna.
+            </p>
+            <div class="about-stats">
+              <div class="stat">
+                <span class="stat-number">50+</span>
+                <span class="stat-label">Projekt</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">30+</span>
+                <span class="stat-label">Nöjda kunder</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">10+</span>
+                <span class="stat-label">Års erfarenhet</span>
+              </div>
+            </div>
+          </div>
+          <div class="about-tech">
+            <h3>Vår tekniska stack</h3>
+            <div class="tech-grid">
+              <div class="tech-item" title="React">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 10.11c1.03 0 1.87.84 1.87 1.89 0 1-.84 1.85-1.87 1.85S10.13 13 10.13 12c0-1.05.84-1.89 1.87-1.89M7.37 20c.63.38 2.01-.2 3.6-1.7-.52-.59-1.03-1.23-1.51-1.9a22.7 22.7 0 0 1-2.4-.36c-.51 2.14-.32 3.61.31 3.96m.71-5.74-.29-.51c-.11.29-.22.58-.29.86.27.06.57.11.88.16l-.3-.51m6.54-.76.81-1.5-.81-1.5c-.3-.53-.62-1-.91-1.47C13.17 9 12.6 9 12 9s-1.17 0-1.71.03c-.29.47-.61.94-.91 1.47L8.57 12l.81 1.5c.3.53.62 1 .91 1.47.54.03 1.11.03 1.71.03s1.17 0 1.71-.03c.29-.47.61-.94.91-1.47M12 6.78c-.19.22-.39.45-.59.72h1.18c-.2-.27-.4-.5-.59-.72m0 10.44c.19-.22.39-.45.59-.72h-1.18c.2.27.4.5.59.72M16.62 4c-.62-.38-2 .2-3.59 1.7.52.59 1.03 1.23 1.51 1.9.82.08 1.63.2 2.4.36.51-2.14.32-3.61-.32-3.96m-.7 5.74.29.51c.11-.29.22-.58.29-.86-.27-.06-.57-.11-.88-.16l.3.51m1.45-7.05c1.47.84 1.63 3.05 1.01 5.63 2.54.75 4.37 1.99 4.37 3.68s-1.83 2.93-4.37 3.68c.62 2.58.46 4.79-1.01 5.63-1.46.84-3.45-.12-5.37-1.95-1.92 1.83-3.91 2.79-5.38 1.95-1.46-.84-1.62-3.05-1-5.63-2.54-.75-4.37-1.99-4.37-3.68s1.83-2.93 4.37-3.68c-.62-2.58-.46-4.79 1-5.63 1.47-.84 3.46.12 5.38 1.95 1.92-1.83 3.91-2.79 5.37-1.95M17.08 12c.34.75.64 1.5.89 2.26 2.1-.63 3.28-1.53 3.28-2.26s-1.18-1.63-3.28-2.26c-.25.76-.55 1.51-.89 2.26M6.92 12c-.34-.75-.64-1.5-.89-2.26-2.1.63-3.28 1.53-3.28 2.26s1.18 1.63 3.28 2.26c.25-.76.55-1.51.89-2.26m9 2.26-.3.51c.31-.05.61-.1.88-.16-.07-.28-.18-.57-.29-.86l-.29.51m-9.82 1.12c.54.16 1.11.29 1.68.39l-.5-.87a21.9 21.9 0 0 1-1.48-.24c.08.24.19.49.3.72M8.08 9.74l.3-.51c-.31.05-.61.1-.88.16.07.28.18.57.29.86l.29-.51m-.3-1.12c-.54-.16-1.11-.29-1.68-.39l.5.87c.48.09.98.16 1.48.24-.08-.24-.19-.49-.3-.72m7.9 1.12c-.54-.16-1.11-.29-1.68-.39l.5.87c-.48-.09-.98-.16-1.48-.24.08.24.19.49.3.72"/></svg>
+              </div>
+              <div class="tech-item" title="Next.js">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm-1.5 14.5v-9l7 4.5-7 4.5Z"/></svg>
+              </div>
+              <div class="tech-item" title="TypeScript">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h18v18H3V3zm10.71 13.53c.18.18.43.29.71.29s.53-.11.71-.29l2.83-2.83a1.003 1.003 0 0 0 0-1.41l-2.83-2.83a1.003 1.003 0 0 0-1.41 0 1.003 1.003 0 0 0 0 1.41L15.84 12l-2.13 2.12c-.39.39-.39 1.02 0 1.41zM7.71 9.88c-.39-.39-.39-1.02 0-1.41a1.003 1.003 0 0 1 1.41 0l2.83 2.83c.39.39.39 1.02 0 1.41l-2.83 2.83a1.003 1.003 0 0 1-1.41 0 1.003 1.003 0 0 1 0-1.41L9.84 12 7.71 9.88z"/></svg>
+              </div>
+              <div class="tech-item" title="Node.js">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.85c-.27 0-.55.07-.78.2l-7.44 4.3c-.48.28-.78.8-.78 1.36v8.58c0 .56.3 1.08.78 1.36l1.95 1.12c.95.46 1.27.47 1.71.47 1.4 0 2.21-.85 2.21-2.33V8.44c0-.12-.1-.22-.22-.22H8.5c-.13 0-.23.1-.23.22v8.47c0 .66-.68 1.31-1.77.76L4.45 16.5a.26.26 0 0 1-.11-.21V7.71c0-.09.04-.17.11-.21l7.44-4.29c.06-.04.16-.04.22 0l7.44 4.29c.07.04.11.12.11.21v8.58c0 .08-.04.16-.11.21l-7.44 4.29c-.06.04-.16.04-.23 0l-1.88-1.12c-.06-.03-.12-.04-.2-.01-.53.24-1 .42-1.43.55-.19.06-.48.15.11.44l2.44 1.44c.24.14.51.21.78.21s.54-.07.78-.21l7.44-4.29c.48-.28.78-.8.78-1.36V7.71c0-.56-.3-1.08-.78-1.36l-7.44-4.3c-.23-.13-.5-.2-.78-.2M14 8c-2.12 0-3.39.89-3.39 2.39 0 1.61 1.26 2.08 3.3 2.28 2.43.24 2.62.6 2.62 1.08 0 .83-.67 1.18-2.23 1.18-1.98 0-2.4-.49-2.55-1.47a.226.226 0 0 0-.22-.18h-.96c-.12 0-.21.09-.21.22 0 1.24.68 2.74 3.94 2.74 2.35 0 3.7-.93 3.7-2.55 0-1.61-1.08-2.03-3.37-2.34-2.31-.3-2.54-.46-2.54-1 0-.45.2-1.05 1.91-1.05 1.5 0 2.09.33 2.32 1.36.02.1.11.17.21.17h.97c.06 0 .11-.02.15-.07.04-.04.07-.1.05-.16C17.56 8.82 16.38 8 14 8z"/></svg>
+              </div>
+              <div class="tech-item" title="Python">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.585 11.692h4.328s2.432.039 2.432-2.35V5.391S16.714 3 11.936 3C7.362 3 7.647 4.983 7.647 4.983l.006 2.055h4.363v.617H5.92s-2.927-.332-2.927 4.282 2.555 4.45 2.555 4.45h1.524v-2.141s-.083-2.554 2.513-2.554zm-.056-5.74a.784.784 0 1 1 0-1.57.784.784 0 1 1 0 1.57z"/><path d="M18.452 7.532h-1.524v2.141s.083 2.554-2.513 2.554h-4.328s-2.432-.04-2.432 2.35v3.951s-.369 2.391 4.409 2.391c4.573 0 4.288-1.983 4.288-1.983l-.006-2.054h-4.363v-.617h6.097s2.927.332 2.927-4.282-2.555-4.451-2.555-4.451zm-4.014 10.011a.784.784 0 1 1 0 1.57.784.784 0 1 1 0-1.57z"/></svg>
+              </div>
+              <div class="tech-item" title="Docker">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.98 11.08h2.12a.19.19 0 0 0 .19-.19V9.01a.19.19 0 0 0-.19-.19h-2.12a.19.19 0 0 0-.19.19v1.88c0 .1.09.19.19.19m-2.95-5.43h2.12a.19.19 0 0 0 .19-.19V3.58a.19.19 0 0 0-.19-.19h-2.12a.19.19 0 0 0-.19.19v1.88c0 .1.09.19.19.19m0 2.71h2.12a.19.19 0 0 0 .19-.19V6.29a.19.19 0 0 0-.19-.19h-2.12a.19.19 0 0 0-.19.19v1.88c0 .1.09.19.19.19m-2.93 0h2.12a.19.19 0 0 0 .19-.19V6.29a.19.19 0 0 0-.19-.19H8.1a.19.19 0 0 0-.19.19v1.88c0 .1.09.19.19.19m-2.96 0h2.12a.19.19 0 0 0 .19-.19V6.29a.19.19 0 0 0-.19-.19H5.14a.19.19 0 0 0-.19.19v1.88c0 .1.09.19.19.19m5.89 2.72h2.12a.19.19 0 0 0 .19-.19V9.01a.19.19 0 0 0-.19-.19h-2.12a.19.19 0 0 0-.19.19v1.88c0 .1.09.19.19.19m-2.93 0h2.12a.19.19 0 0 0 .19-.19V9.01a.19.19 0 0 0-.19-.19H8.1a.19.19 0 0 0-.19.19v1.88c0 .1.09.19.19.19m-2.96 0h2.12a.19.19 0 0 0 .19-.19V9.01a.19.19 0 0 0-.19-.19H5.14a.19.19 0 0 0-.19.19v1.88c0 .1.09.19.19.19m-2.92 0h2.12a.19.19 0 0 0 .19-.19V9.01a.19.19 0 0 0-.19-.19H2.22a.19.19 0 0 0-.19.19v1.88c0 .1.09.19.19.19m21.54-1.19c-.06-.05-.43-.35-1.27-.35-.23 0-.46.02-.69.07-.5-1.03-1.48-1.53-1.55-1.57l-.31-.18-.19.3c-.25.38-.44.81-.53 1.26-.16.72-.06 1.39.27 1.97-.4.23-.99.35-1.46.35H.67a.67.67 0 0 0-.67.67c-.01 1.25.15 2.5.49 3.7.38 1.31.99 2.28 1.81 2.87 1.86 1.34 4.9 1.58 7.55.62.41-.14.81-.32 1.18-.52a7.5 7.5 0 0 0 3.07-2.59c.56.05 1.16.08 1.78.03.8-.07 1.59-.28 2.33-.62.39-.18.76-.4 1.1-.67l.25-.21-.28-.2c-.66-.52-1.11-1.18-1.31-1.91 1.06-.05 2.08-.4 2.8-1.01l.27-.24-.02.03z"/></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <span class="section-tag">// Kontakta oss</span>
+            <h2 class="section-title">Låt oss <span class="gradient-text">prata</span></h2>
+            <p>Har du ett projekt i åtanke? Vi vill gärna höra om det! Berätta om din idé så återkommer vi inom 24 timmar.</p>
+            <div class="contact-details">
+              <a href="mailto:hej@mehow.se" class="contact-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="4" width="20" height="16" rx="2"/>
+                  <path d="M22 6l-10 7L2 6"/>
+                </svg>
+                <span>hej@mehow.se</span>
+              </a>
+              <a href="tel:+46701234567" class="contact-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                <span>+46 70 123 45 67</span>
+              </a>
+              <div class="contact-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+                <span>Stockholm, Sverige</span>
+              </div>
+            </div>
+            <div class="social-links">
+              <a href="https://github.com/mattiasstjernstrom" target="_blank" rel="noopener" aria-label="GitHub">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+              </a>
+              <a href="https://www.linkedin.com/in/mattias-stjernstrom/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <form class="contact-form" id="contact-form">
+            <div class="form-group">
+              <label for="name">Namn</label>
+              <input type="text" id="name" name="name" required placeholder="Ditt namn" />
+            </div>
+            <div class="form-group">
+              <label for="email">E-post</label>
+              <input type="email" id="email" name="email" required placeholder="din@email.se" />
+            </div>
+            <div class="form-group">
+              <label for="message">Meddelande</label>
+              <textarea id="message" name="message" rows="5" required placeholder="Berätta om ditt projekt..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+              <span>Skicka meddelande</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="22" y1="2" x2="11" y2="13"/>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <span class="logo-bracket">&lt;</span>mehow<span class="logo-bracket">/&gt;</span>
+            <p>Webb & Kod Byrå</p>
+          </div>
+          <div class="footer-links">
+            <a href="#services">Tjänster</a>
+            <a href="#projects">Projekt</a>
+            <a href="#about">Om oss</a>
+            <a href="#contact">Kontakt</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 mehow.se. Alla rättigheter förbehållna.</p>
+        </div>
+      </div>
+    </footer>
 
     <script src="script.js"></script>
   </body>
