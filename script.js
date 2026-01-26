@@ -48,6 +48,35 @@ document.addEventListener('DOMContentLoaded', () => {
         revealObserver.observe(el);
     });
 
+    // AI Chat Animation Trigger
+    const aiVisual = document.querySelector('.ai-visual');
+    if (aiVisual) {
+        const aiObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('start-animation');
+                    aiObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        aiObserver.observe(aiVisual);
+    }
+
+
+    // Scroll Fill Animation for Footer Button
+    const footerBtn = document.querySelector('.footer-btn');
+    if (footerBtn) {
+        const fillObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fill-in');
+                    fillObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 1.0 });
+        fillObserver.observe(footerBtn);
+    }
+
     // Navigation Scroll Effect
     const nav = document.querySelector('nav');
     window.addEventListener('scroll', () => {
@@ -86,5 +115,47 @@ document.addEventListener('DOMContentLoaded', () => {
             hero.style.setProperty('--mouse-x', `${x}px`);
             hero.style.setProperty('--mouse-y', `${y}px`);
         });
+    }
+
+    // Portal Particles Generator
+    const particlesContainer = document.querySelector('.portal-particles');
+    if (particlesContainer) {
+        const colors = ['#6c5ce7', '#06b6d4', '#ffffff'];
+        for (let i = 0; i < 30; i++) {
+            const span = document.createElement('span');
+            span.style.setProperty('--x', `${Math.random() * 100}%`);
+            span.style.setProperty('--delay', `${Math.random() * 3}s`);
+            span.style.setProperty('--duration', `${2 + Math.random() * 3}s`);
+            span.style.setProperty('--size', `${2 + Math.random() * 3}px`);
+            span.style.setProperty('--color', colors[Math.floor(Math.random() * colors.length)]);
+            particlesContainer.appendChild(span);
+        }
+    }
+
+    const particlesWideContainer = document.querySelector('.portal-particles-wide');
+    if (particlesWideContainer) {
+        const colors = ['#6c5ce7', '#06b6d4', '#ffffff'];
+        for (let i = 0; i < 40; i++) {
+            const span = document.createElement('span');
+            span.style.setProperty('--x', `${Math.random() * 100}%`);
+            span.style.setProperty('--delay', `${Math.random() * 4}s`);
+            span.style.setProperty('--duration', `${3 + Math.random() * 4}s`);
+            span.style.setProperty('--size', `${1 + Math.random() * 3}px`);
+            span.style.setProperty('--color', colors[Math.floor(Math.random() * colors.length)]);
+            particlesWideContainer.appendChild(span);
+        }
+    }
+
+    // Smoke Effect Generator
+    const smokeContainer = document.querySelector('.hero-smoke');
+    if (smokeContainer) {
+        for (let i = 0; i < 30; i++) {
+            const span = document.createElement('span');
+            span.style.setProperty('--x', `${Math.random() * 100}%`);
+            span.style.setProperty('--delay', `${Math.random() * 5}s`);
+            span.style.setProperty('--duration', `${3 + Math.random() * 4}s`);
+            span.style.setProperty('--size', `${50 + Math.random() * 100}px`);
+            smokeContainer.appendChild(span);
+        }
     }
 });
