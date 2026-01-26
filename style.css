@@ -1085,7 +1085,7 @@ footer {
     }
 
     .hero {
-        padding: 8rem 0 2rem 0;
+        padding: 6rem 0 2rem 0;
         min-height: auto;
         align-items: flex-start; /* Better vertical alignment on mobile */
     }
@@ -1120,12 +1120,17 @@ footer {
         margin: 0 0.1rem;
     }
 
+    .hero-sub {
+    font-size: 1rem;
+}
+
     /* "The Cool Guy" on Mobile */
     .hero-visual {
         display: flex;
         height: 380px;
         width: 100%;
         margin-top: -2rem;
+        margin-bottom: 2rem;
         transform: none !important;
         mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
         -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
@@ -1141,13 +1146,22 @@ footer {
         width: 220px;
         height: 110px;
         bottom: 0;
+        margin-bottom: -2rem;
     }
 
     .hero-smoke, .portal-particles, .portal-particles-wide {
         opacity: 0.4;
+        margin-bottom: -2rem;
+    }
+
+    .marquee-strip {
+        margin: 0.3rem 0;
     }
 
     /* Nav adjustments */
+    .nav-content {
+        padding: 0.5rem 0.5rem;
+    }
     nav.scrolled .nav-content {
         max-width: 95% !important;
         padding: 0.5rem 0.75rem;
