@@ -1,75 +1,337 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>mehow.se ~ terminal</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Noto+Sans+Mono:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="terminal">
-      <div class="terminal-header">
-        <div class="terminal-buttons">
-          <div class="circle red"></div>
-          <div class="circle yellow"></div>
-          <div class="circle green"></div>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mattias Stjernström | Creative Developer</title>
+    <meta name="description" content="Freelance developer specializing in AI, web applications, and premium software.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    <!-- Noise Texture -->
+    <div class="noise-overlay"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="wrapper nav-content">
+            <div class="logo-container">
+                <a href="/"><span>mehow.se</span>
+                </a>
+            </div>
+
+            <ul class="nav-menu">
+                <li><a href="#projects">Work</a></li>
+                <li><a href="#services">Expertise</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="#contact" class="cta-btn nav-cta">Let's Talk</a>
+            </div>
         </div>
-        <div class="terminal-title">guest@mehow.se: ~</div>
-      </div>
-      <div class="terminal-content" id="terminal-content">
-        <div class="output">
-          Welcome to <span class="keyword">mehow.se</span> terminal v2.0<br />
-          Type <span class="string">'help'</span> to see available commands.<br />
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <!-- Tech Grid Background -->
+        <div class="tech-grid"></div>
+
+        <div class="wrapper hero-grid">
+            <div class="hero-text">
+                <h1>
+                    <span>Digital</span>
+                    <span class="one-color-highlight">Architect</span>
+                    <span>& <span class="ai-gradient">AI Alchemist</span></span>
+                </h1>
+                <p class="hero-sub">
+                    Turning complex systems into usable products
+                </p>
+                <div class="hero-btns">
+                   <a href="#projects" class="cta-btn">View Selected Work</a>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="hero-platform"></div>
+                <div class="hero-smoke"></div>
+                <div class="portal-particles"></div>
+                <div class="portal-particles-wide"></div>
+                <img src="assets/mattias-hero.png" alt="Mattias Stjernström" class="hero-img">
+            </div>
+            </div>
         </div>
-        
-        <div class="command-line">
-          <span class="prompt">
-            <span class="tilda">➜</span> <span class="directory">~</span>
-          </span>
-          <input type="text" id="cmd-input" autocomplete="off" spellcheck="false" autofocus />
+    </header>
+
+    <!-- Marquee Ticker -->
+    <div class="marquee-strip">
+        <div class="marquee-content">
+            <span>COMPUTER VISION</span>
+            <span class="dot-separator"></span>
+            <span>AI CHATBOTS</span>
+            <span class="dot-separator"></span>
+            <span>WEBSHOPS</span>
+            <span class="dot-separator"></span>
+            <span>PREMIUM UI/UX</span>
+            <span class="dot-separator"></span>
+            <span>LLM INTEGRATION</span>
+            <span class="dot-separator"></span>
+            <!-- Repeat for seamless scroll -->
+            <span>COMPUTER VISION</span>
+            <span class="dot-separator"></span>
+            <span>AI CHATBOTS</span>
+            <span class="dot-separator"></span>
+            <span>WEBSHOPS</span>
+            <span class="dot-separator"></span>
+            <span>PREMIUM UI/UX</span>
+            <span class="dot-separator"></span>
+            <span>LLM INTEGRATION</span>
+            <span class="dot-separator"></span>
         </div>
-      </div>
     </div>
 
-    <!-- Universal mehow.se-watermark for demo sites (white text) -->
-    <div
-      style="
-        position: fixed;
-        bottom: 0px;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-        width: 175px;
-        text-align: center;
-        color: #fff;
-        line-height: 0px;
-        filter: drop-shadow(1px 0px 8px #842f8f);
-        font-family: Arial, Helvetica, sans-serif;
-        scale: 0.7;
-        z-index: 1000;
-      "
-    >
-      made with 💖<a href="https://www.mehow.se/"
-        ><img
-          src="logotype.svg"
-          alt="Stjernström"
-          height="75"
-          width="170"
-          style="
-            background: 0px 0px 10px 0px #000000;
-            filter: drop-shadow(1px 0px 8px #842f8f) hue-rotate(300deg);
-          "
-        />
-      </a>
-    </div>
+    <!-- Main Content -->
+    <main class="wrapper">
 
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section">
+            <div class="section-head">
+                <h2>Selected <span class="highlight">Works</span>.</h2>
+            </div>
+
+            <!-- Project 1 -->
+            <article class="big-project-card">
+                <div class="project-visual">
+                    <!-- Placeholder color/gradient if no image, or img tag -->
+                    <div style="width:100%; height:100%; background: radial-gradient(circle at center, #222, #000); display: flex; align-items: center; justify-content: center;">
+                        <img src="https://mehow.se/fokus-app/assets/mockups/print.png" alt="fokus-app">
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>fokus</h3>
+                    <p>A minimalist utility designed to mask distractions and isolate essential content, maximizing productivity for deep work sessions.</p>
+                    <div class="tags">
+                       <span class="tag">Productivity</span>
+                       <span class="tag">Utility</span>
+                    </div>
+                    <a href="https://mehow.se/fokus-app" class="cta-btn" style="background: transparent; border: 1px solid var(--text-light); color: var(--text-light); padding: 0.75rem 2rem;">Visit Site</a>
+                </div>
+            </article>
+
+             <!-- Project 2 -->
+             <article class="big-project-card">
+                <div class="project-visual">
+                   <div style="width:100%; height:100%; background: radial-gradient(circle at center, #2a2a2a, #000); display: flex; align-items: center; justify-content: center;">
+                        <img src="assets/mdbase-screenshot.png" alt="mdbase">
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>MDBase</h3>
+                    <p>A robust non-cloud based Markdown editor prioritizing simplicity. Built for developers who need a streamlined workflow without the bloat.</p>
+                    <div class="tags">
+                       <span class="tag">Editor</span>
+                       <span class="tag">Local-First</span>
+                    </div>
+                    <a href="https://mdba.se" class="cta-btn" style="background: transparent; border: 1px solid var(--text-light); color: var(--text-light); padding: 0.75rem 2rem;">Explore</a>
+                </div>
+            </article>
+
+             <!-- Project 3 -->
+             <article class="big-project-card">
+                <div class="project-visual">
+                    <div style="width:100%; height:100%; background: radial-gradient(circle at center, #1b1b1b, #000); display: flex; align-items: center; justify-content: center;">
+                         <img src="assets/simpleversa.png" alt="simpleversa">
+                     </div>
+                </div>
+                <div class="project-info">
+                    <h3>SimpleVersa</h3>
+                    <p>A specialized World of Warcraft addon for the Remix event, integrating versatility statistics directly into player tooltips.</p>
+                    <div class="tags">
+                       <span class="tag">Lua</span>
+                       <span class="tag">Gaming</span>
+                    </div>
+                    <a href="https://github.com/mattiasstjernstrom/SimpleVersa" class="cta-btn" style="background: transparent; border: 1px solid var(--text-light); color: var(--text-light); padding: 0.75rem 2rem;">Github</a>
+                </div>
+            </article>
+
+            <!-- Project 4: Upcoming AI Agent -->
+            <article class="big-project-card upcoming-project reveal">
+                <div class="project-visual ai-visual">
+                    <div class="ai-glow"></div>
+                    <div class="ai-interface">
+                        <div class="ai-msg ai">"Hi! How can I help you today?"</div>
+                        <div class="ai-msg user">"I'd like to book a meeting to discuss AI."</div>
+                        <div class="ai-msg ai">"Of course! I found an opening tomorrow at 10:00 AM. Should I book it?"</div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <div class="status-tag">
+                        <span class="dot-pulse"></span>
+                        Upcoming
+                    </div>
+                    <h3>The AI receptionist</h3>
+                    <p>A 24/7 intelligent agent that masters your business logic to resolve complex inquiries and drive conversions.<br /><br />It streamlines your sales pipeline by checking real-time availability and automating meeting bookings directly within the chat.
+                    </p>
+                    <div class="tags">
+                       <span class="tag">AI</span>
+                       <span class="tag">Automation</span>
+                       <span class="tag">Calendar integration</span>
+                    </div>
+                    <p class="pitch-text">Currently in development to redefine digital customer interaction.</p>
+                    <a href="#contact" class="cta-btn upcoming-cta">Interested? Get in touch</a>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="expertise-section">
+            <div class="section-head expertise-head">
+                <h2>My <span class="highlight">Expertise</span>.</h2>
+            </div>
+
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <h3>AI Solutions</h3>
+                    <p>Computer Vision, LLMs, & Smart Automation using Python, TensorFlow, and PyTorch.</p>
+                </div>
+                <div class="expertise-card">
+                    <h3>Web Apps</h3>
+                    <p>Full-stack development with modern frameworks or pure Vanilla JS for maximum performance.</p>
+                </div>
+                <div class="expertise-card">
+                    <h3>Design</h3>
+                    <p>Creating unique, memorable digital experiences that stand out from the generic templates.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>The Mind Behind the <span class="highlight">Machine</span>.</h2>
+                    <p>
+                        Based in the historical heart of Norberg, Sweden, I operate at the intersection of logic and creativity. My journey is fueled by a relentless curiosity about how we can use AI to amplify human potential rather than replace it.
+                    </p>
+                    <p>
+                        Whether I'm fine-tuning a neural network or crafting a pixel-perfect interface, my goal is always the same: to build software that feels as good as it functions.
+                    </p>
+                    <a href="/mattias-cv/" class="text-link">Explore my full journey <span>→</span></a>
+                </div>
+
+                <div class="about-arsenal">
+                    <h3>Technical Arsenal</h3>
+                    <div class="tech-stack-grid">
+                        <div class="tech-group">
+                            <h4>Core</h4>
+                            <ul>
+                                <li>Python / AI</li>
+                                <li>JavaScript (ES6+)</li>
+                                <li>CSS / Design Systems</li>
+                                <li>HTML5 Semantic</li>
+                            </ul>
+                        </div>
+                        <div class="tech-group">
+                            <h4>Ecosystem</h4>
+                            <ul>
+                                <li>PyTorch / TensorFlow</li>
+                                <li>React / Node.js</li>
+                                <li>PostgreSQL / Redis</li>
+                                <li>Git / Docker</li>
+                            </ul>
+                        </div>
+                        <div class="tech-group">
+                            <h4>AI Implementations</h4>
+                            <ul>
+                                <li>ChatGPT</li>
+                                <li>Claude</li>
+                                <li>Gemini</li>
+                                <li>Copilot</li>
+                                <li>DeepSeek</li>
+                            </ul>
+                        </div>
+                        <div class="tech-group">
+                            <h4>API Implementations</h4>
+                            <ul>
+                                <li>Stripe</li>
+                                <li>Twilio</li>
+                                <li>Google Maps</li>
+                                <li>AWS SDK</li>
+                                <li>Slack API</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Recommendations Section -->
+        <section id="recommendations" class="gems-section">
+            <div class="section-head expertise-head">
+                <h2>Norberg <span class="highlight">Gems</span>.</h2>
+            </div>
+
+            <div class="gems-card">
+                <h3>☕️ Classic Swedish Fika</h3>
+                <p>
+                    A legendary spot since 1916. <strong>Elsa Andersons Konditori</strong> is more than just a café; it's a piece of Swedish cultural history, famous for its grand tradition and resilient spirit.
+                </p>
+
+                <div class="fika-box">
+                    <h4>Elsa Andersons Konditori</h4>
+                    <p>📍 Torget, Norberg</p>
+                </div>
+                <div class="gems-cta">
+                    <p>Want to meet there to discuss work?</p>
+                    <a href="mailto:mattias@mehow.se?subject=Fika and Work" class="cta-btn nav-cta">Let's grab a coffee</a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="contact" class="wrapper">
+        <div class="footer-cta">
+            <a href="mailto:mattias@mehow.se" class="footer-btn">Let's create together.</a>
+        </div>
+
+        <div class="footer-card">
+            <div class="footer-info">
+                <div class="footer-status">
+                    <span class="status-pulse"></span>
+                    Available for new projects
+                </div>
+                <h3>Let's build the future of AI & Web.</h3>
+                <p>Based in Sweden, working globally. Currently focusing on intelligent interfaces and AI-integrated systems. But I'm always open to new opportunities.</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="/mattias-cv/">Curriculum Vitae <span>→</span></a>
+                <a href="https://www.linkedin.com/in/mattias-stjernstrom/">LinkedIn <span>→</span></a>
+                <a href="https://github.com/mattiasstjernstrom">GitHub <span>→</span></a>
+                <a href="mailto:mattias@mehow.se">Email <span>→</span></a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div>© 2026 Mattias Stjernström - mehow.se</div>
+            <div>Built with Precision & Code.</div>
+        </div>
+    </footer>
+
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+    </button>
     <script src="script.js"></script>
-  </body>
+</body>
 </html>
