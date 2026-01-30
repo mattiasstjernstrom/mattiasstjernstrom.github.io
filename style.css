@@ -664,6 +664,10 @@ nav.scrolled .logo-img {
     gap: 4rem;
     margin-bottom: 10rem;
     align-items: center;
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    background: var(--card-bg-alt);
+    padding: 2rem;
 }
 
 .big-project-card:nth-child(even) {
@@ -709,11 +713,15 @@ nav.scrolled .logo-img {
     line-height: 1;
 }
 
-.project-info p {
+.project-info .project-container p {
     font-size: 1.2rem;
     color: var(--text-dim);
     margin-bottom: 2rem;
     line-height: 1.6;
+}
+
+.project-container {
+    padding: 0.2rem;
 }
 
 .tags {
@@ -1204,6 +1212,12 @@ footer {
     .big-project-card:nth-child(even) {
         direction: ltr;
         text-align: left;
+    }
+
+    .big-project-card {
+        border: 0;
+        border-radius: 0;
+        background: transparent;
     }
 
     .project-visual {
